@@ -388,7 +388,6 @@ class SaiDataset(Base):
                 or file_path.name.endswith("DS_Store")
             ):
                 continue
-            print(file_path.name.split("."))
             [
                 scene_id,
                 camera,
