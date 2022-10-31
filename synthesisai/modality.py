@@ -37,12 +37,6 @@ class Modality(Enum):
     
     **Type**: `ndarray[float16]`. **Channels**: 1.
     """
-    ALPHA = auto()
-    """
-    Alpha Image. 0 - means complete transparency, 255 - solid object.
-    
-    **Type**: `ndarray[uint8]`. **Channels**: 1.
-    """
     BODY_SEGMENTATION = auto()
     """
     Semantic segmentation map of various body parts.

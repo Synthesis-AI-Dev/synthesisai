@@ -29,7 +29,6 @@ class _Extension(str, Enum):
     RGB = "rgb.png"
     NORMALS = "normals.tif"
     DEPTH = "depth.tif"
-    ALPHA = "alpha.tif"
     SEGMENTS = "segments.png"
     MEDIAPIPE_DENSE_OBJ = "mediapipe_dense.obj"
     SAI_DENSE_OBJ = "sai_dense.obj"
@@ -41,7 +40,6 @@ def _modality_files(modality: Modality) -> List[_Extension]:
         Modality.RGB: [_Extension.RGB],
         Modality.NORMALS: [_Extension.NORMALS],
         Modality.DEPTH: [_Extension.DEPTH],
-        Modality.ALPHA: [_Extension.ALPHA],
         Modality.BODY_SEGMENTATION: [_Extension.INFO, _Extension.SEGMENTS],
         Modality.CLOTHING_SEGMENTATION: None,
         Modality.INSTANCE_SEGMENTATION: [_Extension.INFO, _Extension.SEGMENTS],
@@ -195,22 +193,6 @@ class _ItemLoaderV1(_ItemLoader):
                     )
             else:
                 self._image_sizes[element_idx] = img.shape[1::-1]
-            return img
-
-        if modality == Modality.ALPHA:
-            alpha_file = item_meta[
-                item_meta.EXTENSION == _Extension.ALPHA
-            ].file_path.iloc[0]
-            img = tiffile.imread(str(alpha_file))
-            if element_idx in self._image_sizes:
-                if self._image_sizes[element_idx] != img.shape[::-1]:
-                    raise ValueError(
-                        f"Dimensions of different image modalities do not match for SCENE_ID={scene_id}"
-                    )
-            else:
-                self._image_sizes[element_idx] = img.shape[::-1]
-            if img is None:
-                raise ValueError(f"Error reading {alpha_file}")
             return img
 
         if modality == Modality.DEPTH:

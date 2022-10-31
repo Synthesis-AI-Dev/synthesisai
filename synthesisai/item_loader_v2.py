@@ -37,7 +37,6 @@ def _modality_files(modality: Modality) -> List[_Extension]:
         Modality.RGB: [_Extension.RGB],
         Modality.NORMALS: [_Extension.NORMALS],
         Modality.DEPTH: [_Extension.DEPTH],
-        Modality.ALPHA: None,
         Modality.BODY_SEGMENTATION: [_Extension.INFO, _Extension.BODY_SEGMENTATION],
         Modality.CLOTHING_SEGMENTATION: None,
         Modality.INSTANCE_SEGMENTATION: [_Extension.INSTANCE_SEGMENTATION],
