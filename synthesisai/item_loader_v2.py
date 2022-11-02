@@ -169,7 +169,7 @@ class _ItemLoaderV2(_ItemLoader):
 
         if modality == Modality.INSTANCE_SEGMENTATION:
             file_path = item_meta[
-                item_meta.EXTENSION == _Extension.BODY_SEGMENTATION
+                item_meta.EXTENSION == _Extension.INSTANCE_SEGMENTATION
             ].file_path.iloc[0]
             segment_img = self._read_instance_segmentation(file_path, element_idx)
             return segment_img
