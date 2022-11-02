@@ -93,6 +93,7 @@ class _ItemLoaderV1(_ItemLoader):
         metadata_records: List[Dict[str, Union[int, str]]],
         out_of_frame_landmark_strategy: OutOfFrameLandmarkStrategy,
         body_segmentation_mapping: Dict[str, int],
+        clothing_segmentation_mapping: Dict[str, int],
         face_segmentation_classes: List[str],
         face_bbox_pad: int,
     ):
@@ -102,6 +103,7 @@ class _ItemLoaderV1(_ItemLoader):
             metadata_records,
             out_of_frame_landmark_strategy,
             body_segmentation_mapping,
+            clothing_segmentation_mapping,
             face_segmentation_classes,
             face_bbox_pad,
         )

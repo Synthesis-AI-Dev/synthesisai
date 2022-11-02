@@ -38,7 +38,7 @@ def _modality_files(modality: Modality) -> List[_Extension]:
         Modality.NORMALS: [_Extension.NORMALS],
         Modality.DEPTH: [_Extension.DEPTH],
         Modality.BODY_SEGMENTATION: [_Extension.INFO, _Extension.BODY_SEGMENTATION],
-        Modality.CLOTHING_SEGMENTATION: None,
+        Modality.CLOTHING_SEGMENTATION: [_Extension.INFO, _Extension.CLOTHING_SEGMENTATION],
         Modality.INSTANCE_SEGMENTATION: [_Extension.INSTANCE_SEGMENTATION],
         Modality.LANDMARKS_IBUG68: [_Extension.INFO],
         Modality.LANDMARKS_CONTOUR_IBUG68: None,
@@ -88,6 +88,7 @@ class _ItemLoaderV2(_ItemLoader):
         metadata_records: List[Dict[str, Union[int, str]]],
         out_of_frame_landmark_strategy: OutOfFrameLandmarkStrategy,
         body_segmentation_mapping: Dict[str, int],
+        clothing_segmentation_mapping: Dict[str, int],
         face_segmentation_classes: List[str],
         face_bbox_pad: int,
     ):
@@ -97,6 +98,7 @@ class _ItemLoaderV2(_ItemLoader):
             metadata_records,
             out_of_frame_landmark_strategy,
             body_segmentation_mapping,
+            clothing_segmentation_mapping,
             face_segmentation_classes,
             face_bbox_pad,
         )
@@ -165,6 +167,11 @@ class _ItemLoaderV2(_ItemLoader):
                 item_meta.EXTENSION == _Extension.BODY_SEGMENTATION
             ].file_path.iloc[0]
             segment_img, _ = self._read_body_segmentation(file_path, element_idx, info)
+            return segment_img
+        
+        if modality == Modality.CLOTHING_SEGMENTATION:
+            file_path = item_meta[item_meta.EXTENSION == _Extension.CLOTHING_SEGMENTATION].file_path.iloc[0]
+            segment_img, _ = self._read_clothing_segmentation(file_path, element_idx, info)
             return segment_img
 
         if modality == Modality.INSTANCE_SEGMENTATION:
@@ -457,6 +464,33 @@ class _ItemLoaderV2(_ItemLoader):
 
         body_segmentation = body_segmentation_mapping_int[img]
         return body_segmentation, body_segmentation_mapping_int
+    
+    def _read_clothing_segmentation(
+        self, clothing_segmentation_file: str, element_idx: tuple, info: Dict[str, Any]
+    ) -> Tuple[np.ndarray, np.ndarray]:
+        img = np.load(clothing_segmentation_file)["segmentation"]
+        if element_idx in self._image_sizes:
+            if self._image_sizes[element_idx] != img.shape[1::-1]:
+                raise ValueError(
+                    f"Dimensions of different image modalities do not match."
+                )
+        else:
+            self._image_sizes[element_idx] = img.shape[1::-1]
+
+        clothing_segmentation_mapping = info["clothing_segmentation_mapping"]
+        clothing_segmentation_mapping_int = np.full(
+            np.max(list(clothing_segmentation_mapping.values())) + 1,
+            self._clothing_segmentation_mapping["default"],
+            dtype=np.uint8,
+        )
+        for key, value in clothing_segmentation_mapping.items():
+            if key in self._clothing_segmentation_mapping:
+                clothing_segmentation_mapping_int[value] = self._clothing_segmentation_mapping[
+                    key
+                ]
+
+        clothing_segmentation = clothing_segmentation_mapping_int[img]
+        return clothing_segmentation, clothing_segmentation_mapping_int
 
     def _read_instance_segmentation(
         self, instance_segmentation_file: str, element_idx: tuple

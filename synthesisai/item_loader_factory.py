@@ -31,6 +31,7 @@ class _ItemLoaderFactory:
         metadata_records: List[Dict[str, Union[int, str]]],
         out_of_frame_landmark_strategy: OutOfFrameLandmarkStrategy,
         body_segmentation_mapping: Dict[str, int],
+        clothing_segmentation_mapping: Dict[str, int],
         face_segmentation_classes: List[str],
         face_bbox_pad: int,
     ) -> _ItemLoader:
@@ -48,25 +49,17 @@ class _ItemLoaderFactory:
             )
 
         if contains_v1_info:
-            return _ItemLoaderV1(
-                root,
-                modalities,
-                metadata_records,
-                out_of_frame_landmark_strategy,
-                body_segmentation_mapping,
-                face_segmentation_classes,
-                face_bbox_pad,
-            )
-
-        if contains_v2_info:
-            return _ItemLoaderV2(
-                root,
-                modalities,
-                metadata_records,
-                out_of_frame_landmark_strategy,
-                body_segmentation_mapping,
-                face_segmentation_classes,
-                face_bbox_pad,
-            )
-
-        raise Exception("Something went wrong")
+            item_loader_cls = _ItemLoaderV1
+        elif contains_v2_info:
+            item_loader_cls = _ItemLoaderV2
+    
+        return item_loader_cls(
+            root,
+            modalities,
+            metadata_records,
+            out_of_frame_landmark_strategy,
+            body_segmentation_mapping,
+            clothing_segmentation_mapping,
+            face_segmentation_classes,
+            face_bbox_pad,
+        )

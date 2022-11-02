@@ -18,12 +18,14 @@ class _ItemLoader(ABC):
         metadata_records: List[Dict[str, Union[int, str]]],
         out_of_frame_landmark_strategy: OutOfFrameLandmarkStrategy,
         body_segmentation_mapping: Dict[str, int],
+        clothing_segmentation_mapping: Dict[str, int],
         face_segmentation_classes: List[str],
         face_bbox_pad: int,
     ):
         self._modalities = modalities
         self._out_of_frame_landmark_strategy = out_of_frame_landmark_strategy
         self._body_segmentation_mapping = body_segmentation_mapping
+        self._clothing_segmentation_mapping = clothing_segmentation_mapping
         self._face_segmentation_classes = face_segmentation_classes
         self._face_bbox_pad = face_bbox_pad
         self._image_sizes: Dict[tuple, Tuple[int, int]] = {}

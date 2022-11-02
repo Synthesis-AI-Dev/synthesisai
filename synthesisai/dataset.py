@@ -189,6 +189,29 @@ class SaiDataset(Base):
     Default body segmentation mapping.
     """
 
+    CLOTHING_SEGMENTATION_MAPPING = {
+        "default": 0,
+        "background": 0,
+        "sling dress": 1,
+        "long sleeve dress": 2,
+        "long sleeve outerwear": 3,
+        "trousers": 4,
+        "short sleeve shirt": 5,
+        "short sleeve dress": 6,
+        "vest dress": 7,
+        "long sleeve shirt": 8,
+        "shorts": 9,
+        "short sleeve outerwear": 10,
+        "skirt": 11,
+        "scarf": 12,
+        "vest": 13,
+        "hat": 14,
+        "shoe": 15,
+    }
+    """
+    Default clothing segmentation mapping
+    """
+
     FACE_SEGMENTATION_CLASSES = [
         "brow",
         "cheek_left",
@@ -225,6 +248,7 @@ class SaiDataset(Base):
         root: Union[str, os.PathLike],
         modalities: Optional[List[Modality]] = None,
         body_segmentation_mapping: Optional[Dict[str, int]] = None,
+        clothing_segmentation_mapping: Optional[Dict[str, int]] = None,
         face_segmentation_classes: Optional[List[str]] = None,
         face_bbox_pad: int = 0,
         grouping: Grouping = Grouping.NONE,
@@ -361,9 +385,12 @@ class SaiDataset(Base):
         """
         if body_segmentation_mapping is None:
             body_segmentation_mapping = self.BODY_SEGMENTATION_MAPPING
+        if clothing_segmentation_mapping is None:
+            clothing_segmentation_mapping = self.CLOTHING_SEGMENTATION_MAPPING
         if modalities is None:
             modalities = list(Modality)
         self._body_segmentation_mapping = body_segmentation_mapping
+        self._clothing_segmentation_mapping = clothing_segmentation_mapping
         if face_segmentation_classes is None:
             face_segmentation_classes = self.FACE_SEGMENTATION_CLASSES
         self._face_segmentation_classes = face_segmentation_classes
@@ -428,6 +455,7 @@ class SaiDataset(Base):
             metadata_records,
             out_of_frame_landmark_strategy,
             self._body_segmentation_mapping,
+            self._clothing_segmentation_mapping,
             self._face_segmentation_classes,
             self._face_bbox_pad,
         )
