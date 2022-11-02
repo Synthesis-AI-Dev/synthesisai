@@ -19,20 +19,32 @@ Library for loading Synthesis AI Datasets
 * Free software: MIT license
 * Documentation: https://synthesisai.readthedocs.io.
 
-See a [quickstart](examples/quickstart.ipynb) for jupyter notebook with tutorial.
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Synthesis-AI-Dev/synthesisai/blob/main/examples/quickstart.ipynb)
+See a `quickstart <examples/quickstart.ipynb%3E>`__ for jupyter notebook
+with tutorial. |Open In Colab|
 
-Also visit a more detailed example with [landmarks](examples/landmarks.ipynb).
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Synthesis-AI-Dev/synthesisai/blob/main/examples/landmarks.ipynb)
+Also visit a more detailed example with
+`landmarks <examples/landmarks.ipynb>`__. |Open In Colab1|
 
-To familiarize with different coordinate systems used in the dataset, see [transforms](examples/transforms.ipynb).
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Synthesis-AI-Dev/synthesisai/blob/main/examples/transforms.ipynb)
+To familiarize with different coordinate systems used in the dataset,
+see `transforms <examples/transforms.ipynb>`__. |Open In Colab2|
 
-To see, how to use camera intrinsics to transition between 3D and 2D coordinates and to reconstruct head from the depth data, see [intrinsics](examples/intrinsics.ipynb).
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Synthesis-AI-Dev/synthesisai/blob/main/examples/intrinsics.ipynb)
+To see, how to use camera intrinsics to transition between 3D and 2D
+coordinates and to reconstruct head from the depth data, see
+`intrinsics <examples/intrinsics.ipynb>`__. |Open In Colab3|
 
-To learn more how to group images from the same camera scene, see [grouping](examples/grouping.ipynb).
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Synthesis-AI-Dev/synthesisai/blob/main/examples/grouping.ipynb)
+To learn more how to group images from the same camera scene, see
+`grouping <examples/grouping.ipynb>`__. |Open In Colab4|
+
+.. |Open In Colab| image:: https://colab.research.google.com/assets/colab-badge.svg
+   :target: https://colab.research.google.com/github/Synthesis-AI-Dev/synthesisai/blob/main/examples/quickstart.ipynb
+.. |Open In Colab1| image:: https://colab.research.google.com/assets/colab-badge.svg
+   :target: https://colab.research.google.com/github/Synthesis-AI-Dev/synthesisai/blob/main/examples/landmarks.ipynb
+.. |Open In Colab2| image:: https://colab.research.google.com/assets/colab-badge.svg
+   :target: https://colab.research.google.com/github/Synthesis-AI-Dev/synthesisai/blob/main/examples/transforms.ipynb
+.. |Open In Colab3| image:: https://colab.research.google.com/assets/colab-badge.svg
+   :target: https://colab.research.google.com/github/Synthesis-AI-Dev/synthesisai/blob/main/examples/intrinsics.ipynb
+.. |Open In Colab4| image:: https://colab.research.google.com/assets/colab-badge.svg
+   :target: https://colab.research.google.com/github/Synthesis-AI-Dev/synthesisai/blob/main/examples/grouping.ipynb
 
 Credits
 -------
