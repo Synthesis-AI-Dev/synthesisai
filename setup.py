@@ -39,7 +39,7 @@ setup(
     packages=find_packages(include=['synthesisai', 'synthesisai.*']),
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/anishchopra/synthesisai',
+    url='https://github.com/Synthesis-AI-Dev/synthesisai',
     version='0.2.0',
     zip_safe=False,
 )
