@@ -69,6 +69,13 @@ coverage: ## check code coverage quickly with the default Python
 docs: ## generate Sphinx HTML documentation, including API docs
 	rm -f docs/synthesisai.rst
 	rm -f docs/modules.rst
+	rm -rf docs/_modules
+	rm -rf docs/_sources
+	rm -rf docs/_static
+	rm -f docs/.buildinfo
+	rm -f docs/*.html
+	rm -f docs/objects.inv
+	rm -f docs/*.js
 	sphinx-apidoc -o docs/ synthesisai
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html

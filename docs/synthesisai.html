@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>synthesisai package &mdash; synthesisai 0.1.0 documentation</title>
+  <title>synthesisai package &mdash; synthesisai 0.1.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Contributing" href="contributing.html" />
-    <link rel="prev" title="synthesisai" href="modules.html" /> 
+    <link rel="prev" title="Installation" href="installation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -32,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> synthesisai
           </a>
               <div class="version">
-                0.1.0
+                0.1.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -44,35 +44,91 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="readme.html">synthesisai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">synthesisai</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">synthesisai package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-synthesisai.data_types">synthesisai.data_types module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#synthesisai.data_types.OutOfFrameLandmarkStrategy"><code class="docutils literal notranslate"><span class="pre">OutOfFrameLandmarkStrategy</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">synthesisai package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-synthesisai.data_types">synthesisai.data_types module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#synthesisai.data_types.OutOfFrameLandmarkStrategy"><code class="docutils literal notranslate"><span class="pre">OutOfFrameLandmarkStrategy</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.data_types.OutOfFrameLandmarkStrategy.CLIP"><code class="docutils literal notranslate"><span class="pre">OutOfFrameLandmarkStrategy.CLIP</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.data_types.OutOfFrameLandmarkStrategy.IGNORE"><code class="docutils literal notranslate"><span class="pre">OutOfFrameLandmarkStrategy.IGNORE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.data_types.OutOfFrameLandmarkStrategy.clip_landmarks_"><code class="docutils literal notranslate"><span class="pre">OutOfFrameLandmarkStrategy.clip_landmarks_()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#module-synthesisai.dataset">synthesisai.dataset module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#synthesisai.dataset.Grouping"><code class="docutils literal notranslate"><span class="pre">Grouping</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#synthesisai.dataset.SaiDataset"><code class="docutils literal notranslate"><span class="pre">SaiDataset</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#module-synthesisai.item_loader">synthesisai.item_loader module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-synthesisai.item_loader_factory">synthesisai.item_loader_factory module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-synthesisai.item_loader_v1">synthesisai.item_loader_v1 module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-synthesisai.item_loader_v2">synthesisai.item_loader_v2 module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-synthesisai.modality">synthesisai.modality module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality"><code class="docutils literal notranslate"><span class="pre">Modality</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-synthesisai.dataset">synthesisai.dataset module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#synthesisai.dataset.Grouping"><code class="docutils literal notranslate"><span class="pre">Grouping</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.dataset.Grouping.CAMERA"><code class="docutils literal notranslate"><span class="pre">Grouping.CAMERA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.dataset.Grouping.NONE"><code class="docutils literal notranslate"><span class="pre">Grouping.NONE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.dataset.Grouping.SCENE"><code class="docutils literal notranslate"><span class="pre">Grouping.SCENE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.dataset.Grouping.SCENE_CAMERA"><code class="docutils literal notranslate"><span class="pre">Grouping.SCENE_CAMERA</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#module-synthesisai">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#synthesisai.dataset.SaiDataset"><code class="docutils literal notranslate"><span class="pre">SaiDataset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.dataset.SaiDataset.BODY_SEGMENTATION_MAPPING"><code class="docutils literal notranslate"><span class="pre">SaiDataset.BODY_SEGMENTATION_MAPPING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.dataset.SaiDataset.CLOTHING_SEGMENTATION_MAPPING"><code class="docutils literal notranslate"><span class="pre">SaiDataset.CLOTHING_SEGMENTATION_MAPPING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.dataset.SaiDataset.FACE_SEGMENTATION_CLASSES"><code class="docutils literal notranslate"><span class="pre">SaiDataset.FACE_SEGMENTATION_CLASSES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.dataset.SaiDataset.body_segmentation_mapping"><code class="docutils literal notranslate"><span class="pre">SaiDataset.body_segmentation_mapping</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.dataset.SaiDataset.get_group_index"><code class="docutils literal notranslate"><span class="pre">SaiDataset.get_group_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.dataset.SaiDataset.modalities"><code class="docutils literal notranslate"><span class="pre">SaiDataset.modalities</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-synthesisai.item_loader">synthesisai.item_loader module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-synthesisai.item_loader_factory">synthesisai.item_loader_factory module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-synthesisai.item_loader_v1">synthesisai.item_loader_v1 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-synthesisai.item_loader_v2">synthesisai.item_loader_v2 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-synthesisai.modality">synthesisai.modality module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#synthesisai.modality.Modality"><code class="docutils literal notranslate"><span class="pre">Modality</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.BODY_SEGMENTATION"><code class="docutils literal notranslate"><span class="pre">Modality.BODY_SEGMENTATION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.CAMERA_NAME"><code class="docutils literal notranslate"><span class="pre">Modality.CAMERA_NAME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.CAM_INTRINSICS"><code class="docutils literal notranslate"><span class="pre">Modality.CAM_INTRINSICS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.CAM_TO_HEAD"><code class="docutils literal notranslate"><span class="pre">Modality.CAM_TO_HEAD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.CAM_TO_WORLD"><code class="docutils literal notranslate"><span class="pre">Modality.CAM_TO_WORLD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.CLOTHING_SEGMENTATION"><code class="docutils literal notranslate"><span class="pre">Modality.CLOTHING_SEGMENTATION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.DEPTH"><code class="docutils literal notranslate"><span class="pre">Modality.DEPTH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.EXPRESSION"><code class="docutils literal notranslate"><span class="pre">Modality.EXPRESSION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.FACE_BBOX"><code class="docutils literal notranslate"><span class="pre">Modality.FACE_BBOX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.FACIAL_HAIR"><code class="docutils literal notranslate"><span class="pre">Modality.FACIAL_HAIR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.FRAME_NUM"><code class="docutils literal notranslate"><span class="pre">Modality.FRAME_NUM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.GAZE"><code class="docutils literal notranslate"><span class="pre">Modality.GAZE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.HAIR"><code class="docutils literal notranslate"><span class="pre">Modality.HAIR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.HEAD_TO_CAM"><code class="docutils literal notranslate"><span class="pre">Modality.HEAD_TO_CAM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.HEAD_TO_WORLD"><code class="docutils literal notranslate"><span class="pre">Modality.HEAD_TO_WORLD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.IDENTITY"><code class="docutils literal notranslate"><span class="pre">Modality.IDENTITY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.IDENTITY_METADATA"><code class="docutils literal notranslate"><span class="pre">Modality.IDENTITY_METADATA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.INSTANCE_SEGMENTATION"><code class="docutils literal notranslate"><span class="pre">Modality.INSTANCE_SEGMENTATION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.LANDMARKS_3D_COCO"><code class="docutils literal notranslate"><span class="pre">Modality.LANDMARKS_3D_COCO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.LANDMARKS_3D_IBUG68"><code class="docutils literal notranslate"><span class="pre">Modality.LANDMARKS_3D_IBUG68</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.LANDMARKS_3D_KINECT_V2"><code class="docutils literal notranslate"><span class="pre">Modality.LANDMARKS_3D_KINECT_V2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.LANDMARKS_3D_MEDIAPIPE"><code class="docutils literal notranslate"><span class="pre">Modality.LANDMARKS_3D_MEDIAPIPE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.LANDMARKS_3D_MEDIAPIPE_FACE"><code class="docutils literal notranslate"><span class="pre">Modality.LANDMARKS_3D_MEDIAPIPE_FACE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.LANDMARKS_3D_MPEG4"><code class="docutils literal notranslate"><span class="pre">Modality.LANDMARKS_3D_MPEG4</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.LANDMARKS_3D_SAI"><code class="docutils literal notranslate"><span class="pre">Modality.LANDMARKS_3D_SAI</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.LANDMARKS_COCO"><code class="docutils literal notranslate"><span class="pre">Modality.LANDMARKS_COCO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.LANDMARKS_CONTOUR_IBUG68"><code class="docutils literal notranslate"><span class="pre">Modality.LANDMARKS_CONTOUR_IBUG68</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.LANDMARKS_IBUG68"><code class="docutils literal notranslate"><span class="pre">Modality.LANDMARKS_IBUG68</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.LANDMARKS_KINECT_V2"><code class="docutils literal notranslate"><span class="pre">Modality.LANDMARKS_KINECT_V2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.LANDMARKS_MEDIAPIPE"><code class="docutils literal notranslate"><span class="pre">Modality.LANDMARKS_MEDIAPIPE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.LANDMARKS_MEDIAPIPE_FACE"><code class="docutils literal notranslate"><span class="pre">Modality.LANDMARKS_MEDIAPIPE_FACE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.LANDMARKS_MPEG4"><code class="docutils literal notranslate"><span class="pre">Modality.LANDMARKS_MPEG4</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.LANDMARKS_SAI"><code class="docutils literal notranslate"><span class="pre">Modality.LANDMARKS_SAI</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.NORMALS"><code class="docutils literal notranslate"><span class="pre">Modality.NORMALS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.PUPILS"><code class="docutils literal notranslate"><span class="pre">Modality.PUPILS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.PUPILS_3D"><code class="docutils literal notranslate"><span class="pre">Modality.PUPILS_3D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.RGB"><code class="docutils literal notranslate"><span class="pre">Modality.RGB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.SCENE_ID"><code class="docutils literal notranslate"><span class="pre">Modality.SCENE_ID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.WORLD_TO_CAM"><code class="docutils literal notranslate"><span class="pre">Modality.WORLD_TO_CAM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.WORLD_TO_HEAD"><code class="docutils literal notranslate"><span class="pre">Modality.WORLD_TO_HEAD</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-synthesisai">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="history.html">History</a></li>
 </ul>
 
         </div>
@@ -89,7 +145,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a></li>
-          <li class="breadcrumb-item"><a href="modules.html">synthesisai</a></li>
       <li class="breadcrumb-item active">synthesisai package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/synthesisai.rst.txt" rel="nofollow"> View page source</a>
@@ -604,7 +659,7 @@ Each keypoint is a 2D projection of a 3D landmark.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="modules.html" class="btn btn-neutral float-left" title="synthesisai" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

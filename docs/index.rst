@@ -5,11 +5,9 @@ Welcome to synthesisai's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   readme
    installation
-   modules
+   synthesisai
    contributing
-   history
 
 Indices and tables
 ==================
