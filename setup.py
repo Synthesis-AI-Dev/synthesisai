@@ -7,9 +7,6 @@ from setuptools import find_packages, setup
 with open('README.rst') as readme_file:
     readme = readme_file.read()
 
-with open('HISTORY.rst') as history_file:
-    history = history_file.read()
-
 with open("requirements.txt") as requirements_file:
     requirements = requirements_file.read().splitlines()
 
@@ -32,7 +29,7 @@ setup(
     description="Python library for loading synthetic data for ML use cases",
     install_requires=requirements,
     license="MIT license",
-    long_description=readme + '\n\n' + history,
+    long_description=readme,
     include_package_data=True,
     keywords='synthesisai',
     name='synthesisai',
