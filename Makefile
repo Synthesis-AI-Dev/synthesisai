@@ -86,6 +86,7 @@ servedocs: docs ## compile the docs watching for changes
 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
 
 release: dist ## package and upload a release
+	git describe --exact-match --tags
 	twine upload dist/*
 
 dist: clean ## builds source and wheel package
@@ -104,3 +105,7 @@ versionbump/minor: ## bump the minor version
 
 versionbump/major: ## bump the major version
 	bump2version major
+
+listtag:
+	git describe --exact-match --tags
+	echo "hi"
