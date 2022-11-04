@@ -88,3 +88,12 @@ dist: clean ## builds source and wheel package
 
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
+
+versionbump/patch: ## bump the patch version
+	bump2version patch
+
+versionbump/minor: ## bump the minor version
+	bump2version minor
+
+versionbump/major: ## bump the major version
+	bump2version major
