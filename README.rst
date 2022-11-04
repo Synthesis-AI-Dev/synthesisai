@@ -17,7 +17,7 @@ Library for loading Synthesis AI Datasets
 
 
 * Free software: MIT license
-* Documentation: https://synthesisai.readthedocs.io.
+* Documentation: https://synthesis-ai-dev.github.io/synthesisai
 
 See a `quickstart <examples/quickstart.ipynb%3E>`__ for jupyter notebook
 with tutorial. |Open In Colab|
