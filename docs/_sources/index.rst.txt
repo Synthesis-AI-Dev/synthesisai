@@ -7,7 +7,6 @@ Welcome to synthesisai's documentation!
 
    readme
    installation
-   usage
    modules
    contributing
    history
