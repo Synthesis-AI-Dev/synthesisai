@@ -6,10 +6,6 @@ synthesisai
 .. image:: https://img.shields.io/pypi/v/synthesisai.svg
         :target: https://pypi.python.org/pypi/synthesisai
 
-.. image:: https://thenounproject.com/api/private/icons/1000754/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABjZIWhuvj10zTe7c5SNWax_OQjMfVdH8tunpmPETasrydCDovsrSz7sBv9tFEnrTLBYng33wDVJzkihfE_xcmtEdUtUA%3D%3D
-        :target: https://synthesis-ai-dev.github.io/synthesisai/
-        :alt: Documentation Status
-
 
 
 
