@@ -517,7 +517,9 @@ class _ItemLoaderV2(_ItemLoader):
             raise ValueError(
                 f"Expected RGBA image to have 3 channels, got {img.shape[2]}"
             )
-
+        # this is a temporary fix to account for a bug in the scenarios API
+        if img.dtype == np.float16:
+            img = img.astype(np.uint8)
         return img
 
     @staticmethod
