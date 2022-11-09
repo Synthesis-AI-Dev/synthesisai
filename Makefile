@@ -105,7 +105,3 @@ versionbump/minor: ## bump the minor version
 
 versionbump/major: ## bump the major version
 	bump2version major
-
-listtag:
-	git describe --exact-match --tags
-	echo "hi"
