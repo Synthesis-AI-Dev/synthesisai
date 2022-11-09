@@ -31,6 +31,9 @@ coordinates and to reconstruct head from the depth data, see
 To learn more how to group images from the same camera scene, see
 `grouping <examples/grouping.ipynb>`__. |Open In Colab4|
 
+To learn more about multi-human scenarios, see
+`multi-human <examples/multi_human.ipynb>`__. |Open In Colab5|
+
 .. |Open In Colab| image:: https://colab.research.google.com/assets/colab-badge.svg
    :target: https://colab.research.google.com/github/Synthesis-AI-Dev/synthesisai/blob/main/examples/quickstart.ipynb
 .. |Open In Colab1| image:: https://colab.research.google.com/assets/colab-badge.svg
@@ -41,6 +44,8 @@ To learn more how to group images from the same camera scene, see
    :target: https://colab.research.google.com/github/Synthesis-AI-Dev/synthesisai/blob/main/examples/intrinsics.ipynb
 .. |Open In Colab4| image:: https://colab.research.google.com/assets/colab-badge.svg
    :target: https://colab.research.google.com/github/Synthesis-AI-Dev/synthesisai/blob/main/examples/grouping.ipynb
+.. |Open In Colab5| image:: https://colab.research.google.com/assets/colab-badge.svg
+   :target: https://colab.research.google.com/github/Synthesis-AI-Dev/synthesisai/blob/main/examples/multi_human.ipynb
 
 Credits
 -------
