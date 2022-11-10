@@ -39,7 +39,7 @@ def _modality_files(modality: Modality) -> List[_Extension]:
         Modality.DEPTH: [_Extension.DEPTH],
         Modality.BODY_SEGMENTATION: [_Extension.INFO, _Extension.BODY_SEGMENTATION],
         Modality.CLOTHING_SEGMENTATION: [_Extension.INFO, _Extension.CLOTHING_SEGMENTATION],
-        Modality.INSTANCE_SEGMENTATION: [_Extension.INSTANCE_SEGMENTATION],
+        Modality.INSTANCE_SEGMENTATION: [_Extension.INFO, _Extension.INSTANCE_SEGMENTATION],
         Modality.LANDMARKS_IBUG68: [_Extension.INFO],
         Modality.LANDMARKS_CONTOUR_IBUG68: None,
         Modality.LANDMARKS_KINECT_V2: [_Extension.INFO],
@@ -178,7 +178,7 @@ class _ItemLoaderV2(_ItemLoader):
             file_path = item_meta[
                 item_meta.EXTENSION == _Extension.INSTANCE_SEGMENTATION
             ].file_path.iloc[0]
-            segment_img = self._read_instance_segmentation(file_path, element_idx)
+            segment_img = self._read_instance_segmentation(file_path, element_idx, info)
             return segment_img
 
         if modality == Modality.NORMALS:
@@ -358,7 +358,7 @@ class _ItemLoaderV2(_ItemLoader):
                 item_meta.EXTENSION == _Extension.INSTANCE_SEGMENTATION
             ].file_path.iloc[0]
             instance_segmentation = self._read_instance_segmentation(
-                instance_segmentation_file_path, element_idx
+                instance_segmentation_file_path, element_idx, info
             )
 
             face_bboxes = {}
@@ -493,7 +493,7 @@ class _ItemLoaderV2(_ItemLoader):
         return clothing_segmentation, clothing_segmentation_mapping_int
 
     def _read_instance_segmentation(
-        self, instance_segmentation_file: str, element_idx: tuple
+        self, instance_segmentation_file: str, element_idx: tuple, info: dict
     ) -> np.ndarray:
         img = np.load(instance_segmentation_file)["segmentation"]
         if element_idx in self._image_sizes:
@@ -503,8 +503,21 @@ class _ItemLoaderV2(_ItemLoader):
                 )
         else:
             self._image_sizes[element_idx] = img.shape[1::-1]
+        
+        instance_segmentation_mapping = info["instance_segmentation_mapping"]
+        mapped_img = img.copy()
 
-        return img
+        for instance, index in instance_segmentation_mapping.items():
+            if instance == "background":
+                mapped_index = 0
+            else:
+                if instance.startswith("human_"):
+                    instance = instance.replace("human_", "")
+                mapped_index = int(instance)
+            
+            mapped_img[img == index] = mapped_index
+
+        return mapped_img
 
     def _read_rgb(self, rgb_file: str, element_idx: tuple) -> np.ndarray:
         img = np.load(rgb_file)["image"]
