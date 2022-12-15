@@ -486,11 +486,20 @@ class SaiDataset(Base):
     @property
     def body_segmentation_mapping(self) -> Dict[str, int]:
         """
-        Segment mapping for the dataset.
+        Body segmentation mapping for the dataset.
 
         :type: Dict[str, int]
         """
         return self._body_segmentation_mapping
+
+    @property
+    def clothing_segmentation_mapping(self) -> Dict[str, int]:
+        """
+        Clothing segmentation mapping for the dataset.
+
+        :type: Dict[str, int]
+        """
+        return self._clothing_segmentation_mapping
 
     @property
     def modalities(self) -> List[Modality]:

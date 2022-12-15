@@ -178,8 +178,8 @@ class _ItemLoaderV2(_ItemLoader):
             file_path = item_meta[
                 item_meta.EXTENSION == _Extension.INSTANCE_SEGMENTATION
             ].file_path.iloc[0]
-            segment_img = self._read_instance_segmentation(file_path, element_idx, info)
-            return segment_img
+            segment_img, mapping = self._read_instance_segmentation(file_path, element_idx, info)
+            return segment_img, mapping
 
         if modality == Modality.NORMALS:
             normals_file = item_meta[
@@ -357,7 +357,7 @@ class _ItemLoaderV2(_ItemLoader):
             instance_segmentation_file_path = item_meta[
                 item_meta.EXTENSION == _Extension.INSTANCE_SEGMENTATION
             ].file_path.iloc[0]
-            instance_segmentation = self._read_instance_segmentation(
+            instance_segmentation, instance_segmentation_mapping = self._read_instance_segmentation(
                 instance_segmentation_file_path, element_idx, info
             )
 
@@ -365,9 +365,12 @@ class _ItemLoaderV2(_ItemLoader):
 
             for human in info["humans"]:
                 instance_id = human["instance_id"]
+                # to handle really old jobs with integer IDs
+                if isinstance(instance_id, int):
+                    instance_id = str(instance_id)
                 human_face_mask = np.copy(face_mask)
                 # we only care about the face mask for this particular instance
-                human_face_mask[instance_segmentation != instance_id] = 0
+                human_face_mask[instance_segmentation != instance_segmentation_mapping.get(instance_id, 0)] = 0
                 face_bbox = get_bbox(human_face_mask)
                 expanded_face_bbox = expand_bbox(face_bbox, self._face_bbox_pad)
 
@@ -504,20 +507,9 @@ class _ItemLoaderV2(_ItemLoader):
         else:
             self._image_sizes[element_idx] = img.shape[1::-1]
         
-        instance_segmentation_mapping = info["instance_segmentation_mapping"]
-        mapped_img = img.copy()
+        mapping = info["instance_segmentation_mapping"]
 
-        for instance, index in instance_segmentation_mapping.items():
-            if instance == "background":
-                mapped_index = 0
-            else:
-                if instance.startswith("human_"):
-                    instance = instance.replace("human_", "")
-                mapped_index = int(instance)
-            
-            mapped_img[img == index] = mapped_index
-
-        return mapped_img
+        return img, mapping
 
     def _read_rgb(self, rgb_file: str, element_idx: tuple) -> np.ndarray:
         img = np.load(rgb_file)["image"]
