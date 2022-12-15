@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>synthesisai.dataset &mdash; synthesisai 0.1.4 documentation</title>
+  <title>synthesisai.dataset &mdash; synthesisai 0.1.5 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -29,7 +29,7 @@
             <a href="../../index.html" class="icon icon-home"> synthesisai
           </a>
               <div class="version">
-                0.1.4
+                0.1.5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -559,11 +559,20 @@
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">body_segmentation_mapping</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Segment mapping for the dataset.</span>
+<span class="sd">        Body segmentation mapping for the dataset.</span>
 
 <span class="sd">        :type: Dict[str, int]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_body_segmentation_mapping</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">clothing_segmentation_mapping</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Clothing segmentation mapping for the dataset.</span>
+
+<span class="sd">        :type: Dict[str, int]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clothing_segmentation_mapping</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">modalities</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Modality</span><span class="p">]:</span>
