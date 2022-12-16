@@ -254,7 +254,7 @@ class _ItemLoaderV1(_ItemLoader):
             }
 
             # v1 only has one character with ID 1
-            pupils = {1: pupils}
+            pupils = {"human_1": pupils}
             return pupils
 
         if modality == Modality.PUPILS_3D:
@@ -268,18 +268,18 @@ class _ItemLoaderV1(_ItemLoader):
             }
 
             # v1 only has one character with ID 1
-            pupils = {1: pupils}
+            pupils = {"human_1": pupils}
             return pupils
 
         if modality == Modality.IDENTITY:
             identity = info["identity_metadata"]["id"]
             # v1 only has one character with ID 1
-            identity = {1: identity}
+            identity = {"human_1": identity}
             return identity
 
         if modality == Modality.IDENTITY_METADATA:
             metadata = info["identity_metadata"]
-            metadata = {1: metadata}
+            metadata = {"human_1": metadata}
             return metadata
 
         if modality == Modality.HAIR:
@@ -289,7 +289,7 @@ class _ItemLoaderV1(_ItemLoader):
                 hair = None
 
             # v1 only has one character with ID 1
-            hair = {1: hair}
+            hair = {"human_1": hair}
             return hair
 
         if modality == Modality.FACIAL_HAIR:
@@ -299,14 +299,14 @@ class _ItemLoaderV1(_ItemLoader):
                 facial_hair = None
 
             # v1 only has one character with ID 1
-            facial_hair = {1: facial_hair}
+            facial_hair = {"human_1": facial_hair}
             return facial_hair
 
         if modality == Modality.EXPRESSION:
             expression = info["facial_attributes"]["expression"]
 
             # v1 only has one character with ID 1
-            expression = {1: expression}
+            expression = {"human_1": expression}
             return expression
 
         if modality == Modality.GAZE:
@@ -316,7 +316,7 @@ class _ItemLoaderV1(_ItemLoader):
             }
 
             # v1 only has one character with ID 1
-            gaze = {1: gaze}
+            gaze = {"human_1": gaze}
             return gaze
 
         if modality == Modality.FACE_BBOX:
@@ -358,7 +358,7 @@ class _ItemLoaderV1(_ItemLoader):
             expanded_face_bbox = expand_bbox(face_bbox, self._face_bbox_pad)
 
             # v1 only has one character with ID 1
-            expanded_face_bbox = {1: expanded_face_bbox}
+            expanded_face_bbox = {"human_1": expanded_face_bbox}
 
             return expanded_face_bbox
 
@@ -379,7 +379,7 @@ class _ItemLoaderV1(_ItemLoader):
             )
 
             # v1 only has one character with ID 1
-            head2cam = {1: head2cam}
+            head2cam = {"human_1": head2cam}
             return head2cam
 
         if modality == Modality.CAM_TO_HEAD:
@@ -399,7 +399,7 @@ class _ItemLoaderV1(_ItemLoader):
             )
 
             # v1 only has one character with ID 1
-            head2world = {1: head2world}
+            head2world = {"human_1": head2world}
             return head2world
 
         if modality == Modality.WORLD_TO_HEAD:
@@ -582,7 +582,7 @@ class _ItemLoaderV1(_ItemLoader):
             result[int(idd)] = (x * w, y * h)
 
         # v1 only has one character with ID 1
-        result = {1: result}
+        result = {"human_1": result}
 
         return result
 
@@ -614,7 +614,7 @@ class _ItemLoaderV1(_ItemLoader):
             landmarks = OutOfFrameLandmarkStrategy.clip_landmarks_(landmarks, h, w)
 
         # v1 only has one character with ID 1
-        landmarks = {1: landmarks}
+        landmarks = {"human_1": landmarks}
         return landmarks
 
     @classmethod
@@ -629,7 +629,7 @@ class _ItemLoaderV1(_ItemLoader):
             landmarks[int(lmk_name)] = tuple(landmark["camera_space_pos"])
 
         # v1 only has one character with ID 1
-        landmarks = {1: landmarks}
+        landmarks = {"human_1": landmarks}
         return landmarks
 
     def _read_obj(self, obj_file: str, world_to_cam: np.ndarray):
@@ -648,5 +648,5 @@ class _ItemLoaderV1(_ItemLoader):
         )
 
         # v1 only has one character with ID 1
-        result = {1: result}
+        result = {"human_1": result}
         return result
