@@ -466,6 +466,9 @@ class _ItemLoaderV2(_ItemLoader):
                 ]
 
         body_segmentation = body_segmentation_mapping_int[img]
+        if body_segmentation.ndim == 3:
+            assert body_segmentation.shape[-1] == 1
+            body_segmentation = np.squeeze(body_segmentation, -1)
         return body_segmentation, body_segmentation_mapping_int
     
     def _read_clothing_segmentation(
@@ -493,6 +496,9 @@ class _ItemLoaderV2(_ItemLoader):
                 ]
 
         clothing_segmentation = clothing_segmentation_mapping_int[img]
+        if clothing_segmentation.ndim == 3:
+            assert clothing_segmentation.shape[-1] == 1
+            clothing_segmentation = np.squeeze(clothing_segmentation, -1)
         return clothing_segmentation, clothing_segmentation_mapping_int
 
     def _read_instance_segmentation(
@@ -509,6 +515,9 @@ class _ItemLoaderV2(_ItemLoader):
         
         mapping = info["instance_segmentation_mapping"]
 
+        if img.ndim == 3:
+            assert img.shape[-1] == 1
+            img = np.squeeze(img, -1)
         return img, mapping
 
     def _read_rgb(self, rgb_file: str, element_idx: tuple) -> np.ndarray:
