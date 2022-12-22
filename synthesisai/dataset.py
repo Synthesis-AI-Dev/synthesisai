@@ -222,6 +222,7 @@ class SaiDataset(Base):
         "eyelid_left",
         "eyelid_right",
         "eyes",
+        "forehead",
         "jaw",
         "jowl",
         "lip_lower",

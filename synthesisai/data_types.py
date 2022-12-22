@@ -9,6 +9,7 @@ LandmarkId = int
 Landmark_2D = Tuple[float, float]
 Landmark_3D = Tuple[float, float, float]
 
+
 class OutOfFrameLandmarkStrategy(Enum):
     IGNORE = "ignore"
     CLIP = "clip"

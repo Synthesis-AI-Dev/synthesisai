@@ -52,7 +52,7 @@ class _ItemLoaderFactory:
             item_loader_cls = _ItemLoaderV1
         elif contains_v2_info:
             item_loader_cls = _ItemLoaderV2
-    
+
         return item_loader_cls(
             root,
             modalities,

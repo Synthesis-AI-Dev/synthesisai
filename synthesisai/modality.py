@@ -55,6 +55,14 @@ class Modality(Enum):
     
     **Type**: `ndarray[uint16]`. **Channels**: 1.
     """
+    UV = auto()
+    """
+    UV Image. This is a 2-channel image containing UV coordinates, where the first
+    channel corresponds to the U coordinate and the second corresponds to the V
+    coordinate.
+
+    **Type**: `ndarray[uint16]`. **Channels**: 2.
+    """
     LANDMARKS_IBUG68 = auto()
     """
     iBUG-68 landmarks. Each landmark is given by name and two coordinates (x,y) in pixels.

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>synthesisai package &mdash; synthesisai 0.1.5 documentation</title>
+  <title>synthesisai package &mdash; synthesisai 0.1.8 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -32,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> synthesisai
           </a>
               <div class="version">
-                0.1.5
+                0.1.8
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -120,6 +120,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.PUPILS_3D"><code class="docutils literal notranslate"><span class="pre">Modality.PUPILS_3D</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.RGB"><code class="docutils literal notranslate"><span class="pre">Modality.RGB</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.SCENE_ID"><code class="docutils literal notranslate"><span class="pre">Modality.SCENE_ID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.UV"><code class="docutils literal notranslate"><span class="pre">Modality.UV</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.WORLD_TO_CAM"><code class="docutils literal notranslate"><span class="pre">Modality.WORLD_TO_CAM</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#synthesisai.modality.Modality.WORLD_TO_HEAD"><code class="docutils literal notranslate"><span class="pre">Modality.WORLD_TO_HEAD</span></code></a></li>
 </ul>
@@ -246,7 +247,7 @@ each element is a <cite>List[Item]</cite> is a list of consecutive frames for gi
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.dataset.SaiDataset.FACE_SEGMENTATION_CLASSES">
-<span class="sig-name descname"><span class="pre">FACE_SEGMENTATION_CLASSES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['brow',</span> <span class="pre">'cheek_left',</span> <span class="pre">'cheek_right',</span> <span class="pre">'chin',</span> <span class="pre">'eye_left',</span> <span class="pre">'eye_right',</span> <span class="pre">'eyelid_left',</span> <span class="pre">'eyelid_right',</span> <span class="pre">'eyes',</span> <span class="pre">'jaw',</span> <span class="pre">'jowl',</span> <span class="pre">'lip_lower',</span> <span class="pre">'lip_upper',</span> <span class="pre">'mouth',</span> <span class="pre">'mouthbag',</span> <span class="pre">'nose',</span> <span class="pre">'nose_outer',</span> <span class="pre">'nostrils',</span> <span class="pre">'smile_line',</span> <span class="pre">'teeth',</span> <span class="pre">'undereye',</span> <span class="pre">'eyelashes_left',</span> <span class="pre">'eyelashes_right',</span> <span class="pre">'eyebrow_left',</span> <span class="pre">'eyebrow_right',</span> <span class="pre">'undereye_left',</span> <span class="pre">'undereye_right']</span></em><a class="headerlink" href="#synthesisai.dataset.SaiDataset.FACE_SEGMENTATION_CLASSES" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">FACE_SEGMENTATION_CLASSES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['brow',</span> <span class="pre">'cheek_left',</span> <span class="pre">'cheek_right',</span> <span class="pre">'chin',</span> <span class="pre">'eye_left',</span> <span class="pre">'eye_right',</span> <span class="pre">'eyelid_left',</span> <span class="pre">'eyelid_right',</span> <span class="pre">'eyes',</span> <span class="pre">'forehead',</span> <span class="pre">'jaw',</span> <span class="pre">'jowl',</span> <span class="pre">'lip_lower',</span> <span class="pre">'lip_upper',</span> <span class="pre">'mouth',</span> <span class="pre">'mouthbag',</span> <span class="pre">'nose',</span> <span class="pre">'nose_outer',</span> <span class="pre">'nostrils',</span> <span class="pre">'smile_line',</span> <span class="pre">'teeth',</span> <span class="pre">'undereye',</span> <span class="pre">'eyelashes_left',</span> <span class="pre">'eyelashes_right',</span> <span class="pre">'eyebrow_left',</span> <span class="pre">'eyebrow_right',</span> <span class="pre">'undereye_left',</span> <span class="pre">'undereye_right']</span></em><a class="headerlink" href="#synthesisai.dataset.SaiDataset.FACE_SEGMENTATION_CLASSES" title="Permalink to this definition"></a></dt>
 <dd><p>Segmentation classes included in the face bounding box.</p>
 </dd></dl>
 
@@ -327,7 +328,7 @@ y
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.CAMERA_NAME">
-<span class="sig-name descname"><span class="pre">CAMERA_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">35</span></em><a class="headerlink" href="#synthesisai.modality.Modality.CAMERA_NAME" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">CAMERA_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">36</span></em><a class="headerlink" href="#synthesisai.modality.Modality.CAMERA_NAME" title="Permalink to this definition"></a></dt>
 <dd><p>Camera name consisting of lowercase alphanumeric characters. Usually used when more than one are defined in a scene.
 Default is “cam_default”.</p>
 <p><strong>Type</strong>: <cite>str</cite>.</p>
@@ -335,21 +336,21 @@ Default is “cam_default”.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.CAM_INTRINSICS">
-<span class="sig-name descname"><span class="pre">CAM_INTRINSICS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">34</span></em><a class="headerlink" href="#synthesisai.modality.Modality.CAM_INTRINSICS" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">CAM_INTRINSICS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">35</span></em><a class="headerlink" href="#synthesisai.modality.Modality.CAM_INTRINSICS" title="Permalink to this definition"></a></dt>
 <dd><p>Camera intrinsics matrix in OpenCV format: <a class="reference external" href="https://docs.opencv.org/3.4.15/dc/dbb/tutorial_py_calibration.html">https://docs.opencv.org/3.4.15/dc/dbb/tutorial_py_calibration.html</a>.</p>
 <p><strong>Type</strong>: <cite>ndarray[float32]</cite>. <strong>Shape</strong>: <cite>(4, 4)</cite>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.CAM_TO_HEAD">
-<span class="sig-name descname"><span class="pre">CAM_TO_HEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">29</span></em><a class="headerlink" href="#synthesisai.modality.Modality.CAM_TO_HEAD" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">CAM_TO_HEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="headerlink" href="#synthesisai.modality.Modality.CAM_TO_HEAD" title="Permalink to this definition"></a></dt>
 <dd><p>Transformation matrix from the camera to the head coordinate system.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, ndarray[float32]]</cite>. <strong>Shape</strong>: <cite>(4, 4)</cite>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.CAM_TO_WORLD">
-<span class="sig-name descname"><span class="pre">CAM_TO_WORLD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#synthesisai.modality.Modality.CAM_TO_WORLD" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">CAM_TO_WORLD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">33</span></em><a class="headerlink" href="#synthesisai.modality.Modality.CAM_TO_WORLD" title="Permalink to this definition"></a></dt>
 <dd><p>Transformation matrix from the camera to the world coordinate system.</p>
 <p><strong>Type</strong>: <cite>ndarray[float32]</cite>. <strong>Shape</strong>: <cite>(4, 4)</cite>.</p>
 </dd></dl>
@@ -370,7 +371,7 @@ Default is “cam_default”.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.EXPRESSION">
-<span class="sig-name descname"><span class="pre">EXPRESSION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">25</span></em><a class="headerlink" href="#synthesisai.modality.Modality.EXPRESSION" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">EXPRESSION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">26</span></em><a class="headerlink" href="#synthesisai.modality.Modality.EXPRESSION" title="Permalink to this definition"></a></dt>
 <dd><p>Expression and its intensity.</p>
 <p><strong>Format</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -386,14 +387,14 @@ Default is “cam_default”.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.FACE_BBOX">
-<span class="sig-name descname"><span class="pre">FACE_BBOX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">27</span></em><a class="headerlink" href="#synthesisai.modality.Modality.FACE_BBOX" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">FACE_BBOX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">28</span></em><a class="headerlink" href="#synthesisai.modality.Modality.FACE_BBOX" title="Permalink to this definition"></a></dt>
 <dd><p>Face bounding box in the format (left, top, right, bottom) in pixels.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, Tuple[int, int, int, int]]</cite>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.FACIAL_HAIR">
-<span class="sig-name descname"><span class="pre">FACIAL_HAIR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">24</span></em><a class="headerlink" href="#synthesisai.modality.Modality.FACIAL_HAIR" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">FACIAL_HAIR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">25</span></em><a class="headerlink" href="#synthesisai.modality.Modality.FACIAL_HAIR" title="Permalink to this definition"></a></dt>
 <dd><p>Facial hair metadata. If no facial hair is present for a human, <cite>None</cite> is provided.</p>
 <p><strong>Format</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -412,14 +413,14 @@ Default is “cam_default”.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.FRAME_NUM">
-<span class="sig-name descname"><span class="pre">FRAME_NUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">36</span></em><a class="headerlink" href="#synthesisai.modality.Modality.FRAME_NUM" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">FRAME_NUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">37</span></em><a class="headerlink" href="#synthesisai.modality.Modality.FRAME_NUM" title="Permalink to this definition"></a></dt>
 <dd><p>Frame number used for consecutive animation frames. Used for animation.</p>
 <p><strong>Type</strong>: <cite>int</cite>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.GAZE">
-<span class="sig-name descname"><span class="pre">GAZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">26</span></em><a class="headerlink" href="#synthesisai.modality.Modality.GAZE" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">GAZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">27</span></em><a class="headerlink" href="#synthesisai.modality.Modality.GAZE" title="Permalink to this definition"></a></dt>
 <dd><p>Gaze direction in camera space.</p>
 <dl>
 <dt><strong>Format</strong>::</dt><dd><dl class="simple">
@@ -437,7 +438,7 @@ Default is “cam_default”.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.HAIR">
-<span class="sig-name descname"><span class="pre">HAIR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23</span></em><a class="headerlink" href="#synthesisai.modality.Modality.HAIR" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">HAIR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">24</span></em><a class="headerlink" href="#synthesisai.modality.Modality.HAIR" title="Permalink to this definition"></a></dt>
 <dd><p>Hair metadata. If no hair are present <cite>None</cite> is returned.</p>
 <p><strong>Format</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -456,28 +457,28 @@ Default is “cam_default”.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.HEAD_TO_CAM">
-<span class="sig-name descname"><span class="pre">HEAD_TO_CAM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">28</span></em><a class="headerlink" href="#synthesisai.modality.Modality.HEAD_TO_CAM" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">HEAD_TO_CAM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">29</span></em><a class="headerlink" href="#synthesisai.modality.Modality.HEAD_TO_CAM" title="Permalink to this definition"></a></dt>
 <dd><p>Transformation matrix from the head to the camera coordinate system.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, ndarray[float32]]</cite>. <strong>Shape</strong>: <cite>(4, 4)</cite>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.HEAD_TO_WORLD">
-<span class="sig-name descname"><span class="pre">HEAD_TO_WORLD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="headerlink" href="#synthesisai.modality.Modality.HEAD_TO_WORLD" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">HEAD_TO_WORLD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">31</span></em><a class="headerlink" href="#synthesisai.modality.Modality.HEAD_TO_WORLD" title="Permalink to this definition"></a></dt>
 <dd><p>Transformation matrix from the head to the world coordinate system.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, ndarray[float32]]</cite>. <strong>Shape</strong>: <cite>(4, 4)</cite>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.IDENTITY">
-<span class="sig-name descname"><span class="pre">IDENTITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">21</span></em><a class="headerlink" href="#synthesisai.modality.Modality.IDENTITY" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">IDENTITY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">22</span></em><a class="headerlink" href="#synthesisai.modality.Modality.IDENTITY" title="Permalink to this definition"></a></dt>
 <dd><p>Mapping from instance ID (ranging from 0 to the number of humans in the image) to human ID (corresponding to the ID provided in the job config)</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, int]</cite>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.IDENTITY_METADATA">
-<span class="sig-name descname"><span class="pre">IDENTITY_METADATA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">22</span></em><a class="headerlink" href="#synthesisai.modality.Modality.IDENTITY_METADATA" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">IDENTITY_METADATA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">23</span></em><a class="headerlink" href="#synthesisai.modality.Modality.IDENTITY_METADATA" title="Permalink to this definition"></a></dt>
 <dd><p>Additional metadata about the people in the image.</p>
 <p><strong>Format</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -504,63 +505,63 @@ Default is “cam_default”.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.LANDMARKS_3D_COCO">
-<span class="sig-name descname"><span class="pre">LANDMARKS_3D_COCO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">17</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_3D_COCO" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">LANDMARKS_3D_COCO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_3D_COCO" title="Permalink to this definition"></a></dt>
 <dd><p>COCO whole body landmarks in 3D. Each landmark is given by name and three coordinates (x,y,z) in camera space.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, Dict[LandmarkId, Landmark3d]]</cite>. Should have no more than 133 points.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.LANDMARKS_3D_IBUG68">
-<span class="sig-name descname"><span class="pre">LANDMARKS_3D_IBUG68</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">14</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_3D_IBUG68" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">LANDMARKS_3D_IBUG68</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_3D_IBUG68" title="Permalink to this definition"></a></dt>
 <dd><p>iBUG-68 landmarks in 3D. Each landmark is given by name and three coordinates (x,y,z) in camera space.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, Dict[LandmarkId, Landmark3d]]</cite>. Should have no more than 68 points.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.LANDMARKS_3D_KINECT_V2">
-<span class="sig-name descname"><span class="pre">LANDMARKS_3D_KINECT_V2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">15</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_3D_KINECT_V2" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">LANDMARKS_3D_KINECT_V2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_3D_KINECT_V2" title="Permalink to this definition"></a></dt>
 <dd><p>Kinect v2 landmarks in 3D. Each landmark is given by name and three coordinates (x,y,z) in camera space.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, Dict[LandmarkId, Landmark3d]]</cite>. Should have no more than 32 points.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.LANDMARKS_3D_MEDIAPIPE">
-<span class="sig-name descname"><span class="pre">LANDMARKS_3D_MEDIAPIPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">16</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_3D_MEDIAPIPE" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">LANDMARKS_3D_MEDIAPIPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">17</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_3D_MEDIAPIPE" title="Permalink to this definition"></a></dt>
 <dd><p>MediaPipe pose landmarks in 3D. Each landmark is given by name and three coordinates (x,y,z) in camera space.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, Dict[LandmarkId, Landmark3d]]</cite>. hould have no more than 33 points.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.LANDMARKS_3D_MEDIAPIPE_FACE">
-<span class="sig-name descname"><span class="pre">LANDMARKS_3D_MEDIAPIPE_FACE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">37</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_3D_MEDIAPIPE_FACE" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">LANDMARKS_3D_MEDIAPIPE_FACE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">38</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_3D_MEDIAPIPE_FACE" title="Permalink to this definition"></a></dt>
 <dd><p>MediaPipe dense face landmarks in 3D. Each landmark is given by three coordinates (x,y,z) in camera space.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, ndarray[float32]]</cite>. <strong>Shape</strong>: <cite>(468, 3)</cite>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.LANDMARKS_3D_MPEG4">
-<span class="sig-name descname"><span class="pre">LANDMARKS_3D_MPEG4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_3D_MPEG4" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">LANDMARKS_3D_MPEG4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">19</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_3D_MPEG4" title="Permalink to this definition"></a></dt>
 <dd><p>MPEG4 landmarks in 3D. Each landmark is given by name and three coordinates (x,y,z) in camera space.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, Dict[LandmarkId, Landmark3d]]</cite>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.LANDMARKS_3D_SAI">
-<span class="sig-name descname"><span class="pre">LANDMARKS_3D_SAI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">38</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_3D_SAI" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">LANDMARKS_3D_SAI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">39</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_3D_SAI" title="Permalink to this definition"></a></dt>
 <dd><p>SAI dense face landmarks in 3D. Each landmark is given by three coordinates (x,y,z) in camera space.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, ndarray[float32]]</cite>. <strong>Shape</strong>: <cite>(4840, 3)</cite>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.LANDMARKS_COCO">
-<span class="sig-name descname"><span class="pre">LANDMARKS_COCO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_COCO" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">LANDMARKS_COCO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_COCO" title="Permalink to this definition"></a></dt>
 <dd><p>COCO whole body landmarks. Each landmark is given by name and two coordinates (x,y) in pixels.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, Dict[LandmarkId, Landmark2d]]</cite>. Should have no more than 133 points.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.LANDMARKS_CONTOUR_IBUG68">
-<span class="sig-name descname"><span class="pre">LANDMARKS_CONTOUR_IBUG68</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_CONTOUR_IBUG68" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">LANDMARKS_CONTOUR_IBUG68</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_CONTOUR_IBUG68" title="Permalink to this definition"></a></dt>
 <dd><p>iBUG-68 contour landmarks. Each landmark is given by two coordinates (name, x,y) in pixels.
 Each keypoint is defined in a similar manner to human labelers marking 2D face kepoints.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, Dict[LandmarkId, Landmark2d]]</cite>. Should have no more than 68 points.</p>
@@ -568,7 +569,7 @@ Each keypoint is defined in a similar manner to human labelers marking 2D face k
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.LANDMARKS_IBUG68">
-<span class="sig-name descname"><span class="pre">LANDMARKS_IBUG68</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_IBUG68" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">LANDMARKS_IBUG68</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_IBUG68" title="Permalink to this definition"></a></dt>
 <dd><p>iBUG-68 landmarks. Each landmark is given by name and two coordinates (x,y) in pixels.
 Each keypoint is a 2D projection of a 3D landmark.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, Dict[LandmarkId, Landmark2d]</cite>. Should have no more than 68 points.</p>
@@ -576,35 +577,35 @@ Each keypoint is a 2D projection of a 3D landmark.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.LANDMARKS_KINECT_V2">
-<span class="sig-name descname"><span class="pre">LANDMARKS_KINECT_V2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_KINECT_V2" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">LANDMARKS_KINECT_V2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_KINECT_V2" title="Permalink to this definition"></a></dt>
 <dd><p>Kinect v2 landmarks. Each landmark by name and two coordinates (x,y) in pixels.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, Dict[LandmarkId, Landmark2d]]</cite>. Should have no more than 32 points.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.LANDMARKS_MEDIAPIPE">
-<span class="sig-name descname"><span class="pre">LANDMARKS_MEDIAPIPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_MEDIAPIPE" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">LANDMARKS_MEDIAPIPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_MEDIAPIPE" title="Permalink to this definition"></a></dt>
 <dd><p>MediaPipe pose landmarks. Each landmark is given by name and two coordinates (x,y) in pixels.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, Dict[LandmarkId, Landmark2d]]</cite>. Should have no more than 33 points.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.LANDMARKS_MEDIAPIPE_FACE">
-<span class="sig-name descname"><span class="pre">LANDMARKS_MEDIAPIPE_FACE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">39</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_MEDIAPIPE_FACE" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">LANDMARKS_MEDIAPIPE_FACE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">40</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_MEDIAPIPE_FACE" title="Permalink to this definition"></a></dt>
 <dd><p>MediaPipe dense face landmarks. Each landmark is given by two coordinates (x,y) in pixels.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, ndarray[float32]]</cite>. <strong>Shape</strong>: <cite>(468, 2)</cite>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.LANDMARKS_MPEG4">
-<span class="sig-name descname"><span class="pre">LANDMARKS_MPEG4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">13</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_MPEG4" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">LANDMARKS_MPEG4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">14</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_MPEG4" title="Permalink to this definition"></a></dt>
 <dd><p>MPEG4 landmarks. Each landmark is given by name and two coordinates (x,y) in pixels.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, Dict[LandmarkId, Landmark2d]]</cite>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.LANDMARKS_SAI">
-<span class="sig-name descname"><span class="pre">LANDMARKS_SAI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">40</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_SAI" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">LANDMARKS_SAI</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">41</span></em><a class="headerlink" href="#synthesisai.modality.Modality.LANDMARKS_SAI" title="Permalink to this definition"></a></dt>
 <dd><p>SAI dense face landmarks. Each landmark is given by two coordinates (x,y) in pixels.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, ndarray[float32]]</cite>. <strong>Shape</strong>: <cite>(4840, 2)</cite>.</p>
 </dd></dl>
@@ -618,14 +619,14 @@ Each keypoint is a 2D projection of a 3D landmark.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.PUPILS">
-<span class="sig-name descname"><span class="pre">PUPILS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">19</span></em><a class="headerlink" href="#synthesisai.modality.Modality.PUPILS" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">PUPILS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">20</span></em><a class="headerlink" href="#synthesisai.modality.Modality.PUPILS" title="Permalink to this definition"></a></dt>
 <dd><p>Coordinates of pupils. Each pupil is given by name and two coordinates (x,y) in pixels.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, Dict[str, Landmark2d]]</cite>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.PUPILS_3D">
-<span class="sig-name descname"><span class="pre">PUPILS_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">20</span></em><a class="headerlink" href="#synthesisai.modality.Modality.PUPILS_3D" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">PUPILS_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">21</span></em><a class="headerlink" href="#synthesisai.modality.Modality.PUPILS_3D" title="Permalink to this definition"></a></dt>
 <dd><p>Coordinates of pupils in 3D. Each pupil is given by name and three coordinates (x,y,z) in camera space.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, Dict[str, Landmark3d]]</cite>.</p>
 </dd></dl>
@@ -645,15 +646,24 @@ Each keypoint is a 2D projection of a 3D landmark.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="synthesisai.modality.Modality.UV">
+<span class="sig-name descname"><span class="pre">UV</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#synthesisai.modality.Modality.UV" title="Permalink to this definition"></a></dt>
+<dd><p>UV Image. This is a 2-channel image containing UV coordinates, where the first
+channel corresponds to the U coordinate and the second corresponds to the V
+coordinate.</p>
+<p><strong>Type</strong>: <cite>ndarray[uint16]</cite>. <strong>Channels</strong>: 2.</p>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.WORLD_TO_CAM">
-<span class="sig-name descname"><span class="pre">WORLD_TO_CAM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">33</span></em><a class="headerlink" href="#synthesisai.modality.Modality.WORLD_TO_CAM" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">WORLD_TO_CAM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">34</span></em><a class="headerlink" href="#synthesisai.modality.Modality.WORLD_TO_CAM" title="Permalink to this definition"></a></dt>
 <dd><p>Transformation matrix from the world to the camera coordinate system.</p>
 <p><strong>Type</strong>: <cite>ndarray[float32]</cite>. <strong>Shape</strong>: <cite>(4, 4)</cite>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="synthesisai.modality.Modality.WORLD_TO_HEAD">
-<span class="sig-name descname"><span class="pre">WORLD_TO_HEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">31</span></em><a class="headerlink" href="#synthesisai.modality.Modality.WORLD_TO_HEAD" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">WORLD_TO_HEAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#synthesisai.modality.Modality.WORLD_TO_HEAD" title="Permalink to this definition"></a></dt>
 <dd><p>Transformation matrix from the world to the head coordinate system.</p>
 <p><strong>Type</strong>: <cite>Dict[InstanceId, ndarray[float32]]</cite>. <strong>Shape</strong>: <cite>(4, 4)</cite>.</p>
 </dd></dl>

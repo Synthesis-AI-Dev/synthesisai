@@ -104,3 +104,10 @@ ENV/
 # IDE settings
 .vscode/
 .idea/
+
+# Datasets
+examples/humans_api_example_dataset*
+examples/scenarios_api_example_dataset*
+
+# Mac
+.DS_Store
