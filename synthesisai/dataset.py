@@ -116,7 +116,7 @@ class SaiDataset(Base):
         "temples": 36,
         "tongue": 37,
         "undereye": 38,
-        "eyebrows": 89,
+        "eyebrows": 39,
         "torso_lower_left": 40,
         "torso_lower_right": 41,
         "torso_mid_left": 42,
